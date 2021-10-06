@@ -1,7 +1,7 @@
 from tkinter import *
 r=Tk()
 
-r.title("my calculator")
+r.title("Calculator")
 operator=""
 def click(n):
     global operator
@@ -17,9 +17,9 @@ def equal():
         sumup=str(eval(operator))
         t.set(sumup)
     except:
-        t.set("error")
+        t.set("failed!")
 t=StringVar()
-rs1=Entry(r,bd=4,borderwidth=6,bg="powder blue",fg="dark blue",font=('arial',20,'bold'),justify=RIGHT,textvariable=t).grid(row=0,column=0,columnspan=4,padx=16,pady=8)
+rs1=Entry(r,bd=4,borderwidth=6,bg="blue",fg="dark blue",font=('arial',18,'bold'),justify=RIGHT,textvariable=t).grid(row=0,column=0,columnspan=4,padx=16,pady=8)
 ce=Button(r,text="CE",bg="light blue",fg="dark blue",bd=3,width=43,command=clear).grid(row=2,column=0,columnspan=4,padx=15,pady=6)#clear
 de=Button(r,text=".",bg="light blue",fg="dark blue",bd=5,width=7,command=lambda:click(".")).grid(row=6,column=0)#decimal
 b1=Button(r,text="1",bd=5,width=7,bg="light blue",fg="dark blue",command=lambda:click(1)).grid(row=3,column=0)
